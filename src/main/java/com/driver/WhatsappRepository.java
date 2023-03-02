@@ -20,6 +20,15 @@ public class WhatsappRepository {
     private int customGroupCount;
     private int messageId;
 
+    public WhatsappRepository() {
+        this.groupMessageMap = new HashMap<Group, List<Message>>();
+        this.groupUserMap = new HashMap<Group, List<User>>();
+        this.senderMap = new HashMap<Message, User>();
+        this.adminMap = new HashMap<Group, User>();
+        this.userMobile = new HashSet<>();
+        this.customGroupCount = 0;
+        this.messageId = 0;
+    }
 
     public String createUser(String name, String mobile) throws Exception {
         if(userMobile.contains(mobile)){
